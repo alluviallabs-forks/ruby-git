@@ -3,6 +3,33 @@
 # @title README
 -->
 
+# WARNING: THIS IS FORK!
+
+```
+We created this fork to add some changes, 
+and to not wait, while our PR-s will be accepted.
+
+PLEASE, DO NOT USE THIS PROJECT! 
+INSTEAD, GO TO THE ORIGINAL GITHUB REPOSITORY: 
+http://github.com/ruby-git/ruby-git
+```
+
+<details>
+  <summary>original readme</summary>
+  
+  
+  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
 # The Git Gem
 
 The Git Gem provides an API that can be used to create, read, and manipulate
@@ -366,3 +393,22 @@ end
 ## License
 
 licensed under MIT License Copyright (c) 2008  Scott Chacon. See LICENSE for further details.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</details>
