@@ -654,6 +654,7 @@ module Git
     #  :allow_empty_message
     #  :gpg_sign (accepts true or a gpg key ID as a String)
     #  :no_gpg_sign (conflicts with :gpg_sign)
+    #  :message_file_path (conflicts with :message)
     #
     # @param [String] message the commit message to be used
     # @param [Hash] opts the commit options to be used
@@ -667,7 +668,12 @@ module Git
       arr_opts << "--date=#{opts[:date]}" if opts[:date].is_a? String
       arr_opts << '--no-verify' if opts[:no_verify]
       arr_opts << '--allow-empty-message' if opts[:allow_empty_message]
+      arr_opts << "--file=#{opts[:message_file_path]}" if opts[:message_file_path]
 
+      if message && opts[:message_file_path]
+        raise ArgumentError, 'cannot specify :message and :message_file_path'
+      end
+      
       if opts[:gpg_sign] && opts[:no_gpg_sign]
         raise ArgumentError, 'cannot specify :gpg_sign and :no_gpg_sign'
       elsif opts[:gpg_sign]
